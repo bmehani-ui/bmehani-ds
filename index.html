@@ -5,12 +5,9 @@
   <title>Ben Mehani | Projects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Plausible Analytics -->
-  <script
-    defer
-    data-domain="bmehani-ui.github.io"
-    src="https://plausible.io/js/script.js">
-  </script>
+  <!-- GoatCounter Analytics (FREE) -->
+  <script data-goatcounter="https://bmehani-ds.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 
   <style>
     :root{
@@ -41,16 +38,19 @@
       font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 10px;
+      letter-spacing: 0.2px;
     }
 
     h1{
       font-size: 2.6rem;
       margin: 0 0 10px 0;
+      line-height: 1.15;
     }
 
     .subtitle{
       color: var(--muted);
-      margin-bottom: 34px;
+      font-size: 1.05rem;
+      margin: 0 0 34px 0;
       max-width: 65ch;
     }
 
@@ -64,6 +64,7 @@
       text-decoration: none;
       color: inherit;
       border-radius: var(--radius);
+      outline: none;
     }
 
     .card{
@@ -72,21 +73,29 @@
       border-radius: var(--radius);
       padding: 22px 24px;
       box-shadow: var(--shadow);
-      transition: transform 160ms ease, box-shadow 160ms ease;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
     }
 
     .card-link:hover .card{
       transform: translateY(-3px);
       box-shadow: var(--shadowHover);
+      border-color: #d1d5db;
+    }
+
+    .card-link:focus-visible .card{
+      border-color: #9ca3af;
+      box-shadow: 0 0 0 4px rgba(17,24,39,0.10), var(--shadowHover);
     }
 
     .card-title{
       font-size: 1.25rem;
-      margin-bottom: 6px;
+      margin: 0 0 6px 0;
       font-weight: 650;
+      letter-spacing: 0.2px;
     }
 
     .card-desc{
+      margin: 0;
       color: var(--muted);
       line-height: 1.5;
     }
@@ -94,8 +103,15 @@
     .card-footer{
       margin-top: 14px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    .cta{
+      color: var(--text);
+      font-weight: 550;
     }
 
     .pill{
@@ -103,15 +119,52 @@
       padding: 6px 10px;
       border-radius: 999px;
       background: #fbfdff;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
-    .cta{
-      font-weight: 550;
+    /* Analytics button */
+    .analytics-btn{
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      backdrop-filter: blur(6px);
+    }
+    .analytics-btn:hover{
+      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
     }
   </style>
+
+  <script>
+    function gcEvent(name) {
+      if (window.goatcounter && goatcounter.count) {
+        goatcounter.count({
+          path: "/event/" + name,
+          title: name,
+          event: true
+        });
+      }
+    }
+  </script>
 </head>
+
 <body>
+  <!-- Analytics Dashboard Button -->
+  <a class="analytics-btn"
+     href="https://bmehani-ds.goatcounter.com"
+     target="_blank"
+     rel="noopener">
+    Analytics
+  </a>
+
   <div class="container">
     <div class="topline">Ben Mehani • Data Science Projects</div>
     <h1>My Projects</h1>
@@ -123,7 +176,7 @@
       <!-- NBA -->
       <a class="card-link"
          href="https://bmehani-ui.github.io/bmehani-ds/NBA/"
-         onclick="plausible('NBA Click')">
+         onclick="gcEvent('NBA Click')">
         <div class="card">
           <div class="card-title">NBA Schedule Analysis</div>
           <p class="card-desc">
@@ -139,7 +192,7 @@
       <!-- COVID -->
       <a class="card-link"
          href="https://bmehani-ui.github.io/bmehani-ds/Covid/"
-         onclick="plausible('COVID Click')">
+         onclick="gcEvent('COVID Click')">
         <div class="card">
           <div class="card-title">COVID Data Analysis</div>
           <p class="card-desc">
