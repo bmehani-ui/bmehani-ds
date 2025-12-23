@@ -111,11 +111,11 @@
       color: var(--text);
     }
 
-    /* Analytics button */
-    .analytics-btn{
+    /* Top-right buttons */
+    .analytics-btn,
+    .resume-btn{
       position: fixed;
       top: 16px;
-      right: 16px;
       background: rgba(255,255,255,0.95);
       border: 1px solid var(--border);
       border-radius: 999px;
@@ -127,7 +127,16 @@
       backdrop-filter: blur(6px);
     }
 
-    .analytics-btn:hover{
+    .analytics-btn{
+      right: 16px;
+    }
+
+    .resume-btn{
+      right: 110px;
+    }
+
+    .analytics-btn:hover,
+    .resume-btn:hover{
       box-shadow: 0 12px 28px rgba(0,0,0,0.10);
     }
   </style>
@@ -146,7 +155,15 @@
 </head>
 
 <body>
-  <!-- Analytics dashboard -->
+  <!-- Resume button -->
+  <a class="resume-btn"
+     href="https://bmehani-ui.github.io/bmehani-ds/Benjamin_Mehani_Resume.pdf"
+     target="_blank"
+     rel="noopener">
+    Resume
+  </a>
+
+  <!-- Analytics button -->
   <a class="analytics-btn"
      href="https://bmehani.goatcounter.com"
      target="_blank"
@@ -197,3 +214,4 @@
   </div>
 </body>
 </html>
+
