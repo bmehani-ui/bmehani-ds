@@ -1,98 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Ben Mehani | Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0,0,0,0.06);
+      --shadowHover: 0 16px 35px rgba(0,0,0,0.10);
+      --radius: 14px;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 80px auto;
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+    }
+
+    .container{
+      max-width: 900px;
+      margin: 72px auto;
       padding: 0 24px;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      color: #6b7280;
-      margin-bottom: 40px;
-    }
-
-    .project-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .project-list li {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 20px 24px;
-      margin-bottom: 16px;
-      transition: background 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .project-list li:hover {
-      background: #f3f4f6;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .project-list a {
-      text-decoration: none;
-      color: #111827;
-      font-weight: 500;
-      font-size: 1.1rem;
-    }
-
-    .project-description {
-      color: #6b7280;
-      margin-top: 6px;
+    .topline{
       font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    h1{
+      font-size: 2.6rem;
+      margin: 0 0 10px 0;
+      line-height: 1.15;
+    }
+
+    .subtitle{
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 34px 0;
+      max-width: 65ch;
+    }
+
+    .grid{
+      display: grid;
+      gap: 18px;
+    }
+
+    /* The anchor becomes the full card */
+    .card-link{
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: var(--radius);
+      outline: none;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .card-link:hover .card{
+      transform: translateY(-3px);
+      box-shadow: var(--shadowHover);
+      border-color: #d1d5db;
+    }
+
+    /* Keyboard accessibility */
+    .card-link:focus-visible .card{
+      border-color: #9ca3af;
+      box-shadow: 0 0 0 4px rgba(17,24,39,0.10), var(--shadowHover);
+    }
+
+    .card-title{
+      font-size: 1.25rem;
+      margin: 0 0 6px 0;
+      font-weight: 650;
+      letter-spacing: 0.2px;
+    }
+
+    .card-desc{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .card-footer{
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta{
+      color: var(--text);
+      font-weight: 550;
+    }
+
+    .pill{
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #fbfdff;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
-
   <div class="container">
+    <div class="topline">Ben Mehani • Data Science Projects</div>
     <h1>My Projects</h1>
     <p class="subtitle">
-      A small collection of data analysis projects I’ve worked on.
+      A curated set of analyses I’ve built to explore real-world data and communicate insights clearly.
     </p>
 
-    <ul class="project-list">
-      <li>
-        <a href="https://bmehani-ui.github.io/bmehani-ds/Covid/">
-          COVID Data Analysis
-        </a>
-        <div class="project-description">
-          Exploratory analysis and visualization of COVID-related trends.
+    <div class="grid">
+      <a class="card-link" href="https://bmehani-ui.github.io/bmehani-ds/Covid/">
+        <div class="card">
+          <div class="card-title">COVID Data Analysis</div>
+          <p class="card-desc">Exploratory analysis and visualization of COVID-related trends.</p>
+          <div class="card-footer">
+            <span class="pill">EDA • Visualization</span>
+            <span class="cta">View project →</span>
+          </div>
         </div>
-      </li>
+      </a>
 
-      <li>
-        <a href="https://bmehani-ui.github.io/bmehani-ds/NBA/">
-          NBA Schedule Analysis
-        </a>
-        <div class="project-description">
-          Data-driven insights into NBA performance and trends.
+      <a class="card-link" href="https://bmehani-ui.github.io/bmehani-ds/NBA/">
+        <div class="card">
+          <div class="card-title">NBA Schedule Analysis</div>
+          <p class="card-desc">Data-driven insights into NBA performance, rest, and scheduling patterns.</p>
+          <div class="card-footer">
+            <span class="pill">Analytics • Sports</span>
+            <span class="cta">View project →</span>
+          </div>
         </div>
-      </li>
-    </ul>
+      </a>
+    </div>
   </div>
-
 </body>
 </html>
-
-
