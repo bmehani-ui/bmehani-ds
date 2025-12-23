@@ -55,7 +55,6 @@
       gap: 18px;
     }
 
-    /* The anchor becomes the full card */
     .card-link{
       display: block;
       text-decoration: none;
@@ -79,7 +78,6 @@
       border-color: #d1d5db;
     }
 
-    /* Keyboard accessibility */
     .card-link:focus-visible .card{
       border-color: #9ca3af;
       box-shadow: 0 0 0 4px rgba(17,24,39,0.10), var(--shadowHover);
@@ -130,10 +128,14 @@
       A curated set of analyses I’ve built to explore real-world data and communicate insights clearly.
     </p>
 
-    <div class="card-link" href="https://bmehani-ui.github.io/bmehani-ds/NBA/">
+    <div class="grid">
+      <!-- NBA FIRST -->
+      <a class="card-link" href="https://bmehani-ui.github.io/bmehani-ds/NBA/">
         <div class="card">
           <div class="card-title">NBA Schedule Analysis</div>
-          <p class="card-desc">Data-driven insights into NBA performance, rest, and scheduling patterns.</p>
+          <p class="card-desc">
+            Data-driven insights into NBA performance, rest, and scheduling patterns.
+          </p>
           <div class="card-footer">
             <span class="pill">Analytics • Sports</span>
             <span class="cta">View project →</span>
@@ -141,11 +143,13 @@
         </div>
       </a>
 
-  <a class="grid">
+      <!-- COVID SECOND -->
       <a class="card-link" href="https://bmehani-ui.github.io/bmehani-ds/Covid/">
         <div class="card">
           <div class="card-title">COVID Data Analysis</div>
-          <p class="card-desc">Exploratory analysis and visualization of COVID-related trends.</p>
+          <p class="card-desc">
+            Exploratory analysis and visualization of COVID-related trends.
+          </p>
           <div class="card-footer">
             <span class="pill">EDA • Visualization</span>
             <span class="cta">View project →</span>
@@ -156,5 +160,3 @@
   </div>
 </body>
 </html>
-
-
